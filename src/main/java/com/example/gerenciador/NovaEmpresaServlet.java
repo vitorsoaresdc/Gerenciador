@@ -12,9 +12,11 @@ public class NovaEmpresaServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         String nomeEmpresa = req.getParameter("nome");
 
+        //Instanciando Empresa
+        Empresa empresa = new Empresa();
+        empresa.setNome(nomeEmpresa);
 
         PrintWriter saida = resp.getWriter();
         saida.println("<html><body>ola... "+nomeEmpresa+"</body></html>");
