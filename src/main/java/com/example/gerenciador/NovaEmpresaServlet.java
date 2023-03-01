@@ -18,8 +18,11 @@ public class NovaEmpresaServlet extends HttpServlet {
         Empresa empresa = new Empresa();
         empresa.setNome(nomeEmpresa);
 
+        Banco banco = new Banco();
+        banco.adiciona(empresa);
+
         PrintWriter saida = resp.getWriter();
-        saida.println("<html><body>ola... "+nomeEmpresa+"</body></html>");
+        saida.println("<html><body>Empresa:  "+nomeEmpresa+" Cadastrada com sucesso!</body></html>");
 
     }
 }
